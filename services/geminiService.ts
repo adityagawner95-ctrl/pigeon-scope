@@ -3,7 +3,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 
 // Always use process.env.API_KEY directly when initializing the GoogleGenAI client instance.
 export const getGeminiChat = () => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
   return ai.chats.create({
     model: 'gemini-3-flash-preview',
     config: {
